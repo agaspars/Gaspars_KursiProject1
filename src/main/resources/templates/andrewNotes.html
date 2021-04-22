@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+    <head>
+         <meta charset="UTF-8">
+         <title>Starting String Boot Application</title>
+    </head>
+    <body>
+        <div>First note</div>
+        <div>Second note</div>
+        <tr th:each="note : ${Note}">
+            <td th:text="${note.printUserNotes}" />
+        </tr>
+
+    </body>
+</html>
