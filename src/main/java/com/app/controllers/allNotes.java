@@ -11,9 +11,9 @@ import org.springframework.web.bind.annotation.PathVariable;
 import java.util.List;
 
 @Controller
-public class myNotes {
+public class allNotes {
 
-    @GetMapping("/andrewNotes")
+    @GetMapping("/allNotes")
     public String getAllNotes(Model model) {
 
         Note myNote = new Note(Categories.Work);

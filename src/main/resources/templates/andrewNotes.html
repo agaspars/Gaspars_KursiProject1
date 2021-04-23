@@ -14,5 +14,12 @@
                 </tr>
             </th:block>
         </table>
+        <table>
+            <th:block th:each="userNotes : ${userNotes}">
+                <tr>
+                    <td th:text="${userNotes.getNote()}"></td>
+                </tr>
+            </th:block>
+        </table>
     </body>
 </html>
