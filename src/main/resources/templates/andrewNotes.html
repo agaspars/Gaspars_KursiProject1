@@ -7,9 +7,12 @@
     <body>
         <div>First note</div>
         <div>Second note</div>
-        <tr th:each="note : ${Note}">
-            <td th:text="${note.printUserNotes}" />
-        </tr>
-
+        <table>
+            <th:block th:each="allNotes : ${notes}">
+                <tr>
+                    <td th:text="${allNotes.getNote()}"></td>
+                </tr>
+            </th:block>
+        </table>
     </body>
 </html>

@@ -1,10 +1,8 @@
-package Model;
+package model;
 
-import Model.enums.Categories;
-import Model.User;
+import model.enums.Categories;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 public class Note {

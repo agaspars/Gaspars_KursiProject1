@@ -1,6 +1,6 @@
-package Model;
+package model;
 
-import Model.enums.Categories;
+import model.enums.Categories;
 
 import java.util.List;
 
