@@ -1,23 +1,23 @@
-package model;
+package com.app.model;
 
-import model.enums.Categories;
+import com.app.model.enums.Categories;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class Note {
+public class oldNote {
     private String title;
     private String text;
     private Categories category;
     private List<User> allNotes = new ArrayList<>();
 
     //Конструктор для 1-3 задания
-    public Note(String title, String text) {
+    public oldNote(String title, String text) {
         this.title = title;
         this.text = text;
     }
 
-    public Note(Categories category) {
+    public oldNote(Categories category) {
         this.category = category;
     }
 

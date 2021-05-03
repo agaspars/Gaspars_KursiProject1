@@ -1,23 +1,21 @@
-package model;
+package com.app.model;
 
-public class User {
+import com.app.model.enums.Categories;
+
+public class Note {
     private String firstName;
     private String lastName;
     private String email;
     private String note;
-    //Конструктор без заметки
-    public User(String firstName, String lastName, String email) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-    }
 
-    public User(String firstName, String lastName, String email, String note) {
+    public Note(String firstName, String lastName, String email, String note) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.note = note;
     }
+
+    public Note() {}
 
     public String getFirstName() {
         return firstName;
@@ -51,11 +49,5 @@ public class User {
         this.note = note;
     }
 
-    public void printFullInfo() {
-        System.out.println("-------------------------");
-        System.out.println("First Name: " + firstName);
-        System.out.println("Last Name: " + lastName);
-        System.out.println("Email: " + email);
-        System.out.println("-------------------------");
-    }
+
 }

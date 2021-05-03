@@ -1,4 +1,4 @@
-package model;
+package com.app.model;
 
 public class Category {
     private String category;

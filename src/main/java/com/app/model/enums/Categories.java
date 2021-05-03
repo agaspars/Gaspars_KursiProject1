@@ -1,4 +1,4 @@
-package model.enums;
+package com.app.model.enums;
 
 public enum Categories {
     Work("This note has 'Work' category"),

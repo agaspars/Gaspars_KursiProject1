@@ -1,8 +1,8 @@
 package com.app.controllers;
 
-import model.Note;
-import model.User;
-import model.enums.Categories;
+import com.app.model.oldNote;
+import com.app.model.User;
+import com.app.model.enums.Categories;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,7 +17,7 @@ public class userNotes {
 
     @GetMapping("/userNotes/{email}")
     public String getUserNotes(@PathVariable(value = "email") String email, Model model) {
-        Note myNote = new Note(Categories.Work);
+        oldNote myNote = new oldNote(Categories.Work);
 
         myNote.addNote(new User("Andrew", "G.", "a.g@gmail.com", "This is Andrew's first note"));
         myNote.addNote(new User("Andrew", "G.", "a.g@gmail.com", "This is Andrew's second note"));

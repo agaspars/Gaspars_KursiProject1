@@ -1,6 +1,6 @@
-package model;
+package com.app.model;
 
-import model.enums.Categories;
+import com.app.model.enums.Categories;
 
 import java.util.List;
 
@@ -12,7 +12,7 @@ public class JavaCode {
         User andrejs = new User("Andrejs", "Test", "a.t@gmail.com");
         andrejs.printFullInfo();
 
-        Note andrejsNote = new Note("April's notes","These are my april's notes");
+        oldNote andrejsNote = new oldNote("April's notes","These are my april's notes");
         andrejsNote.printNote();
 
         Category andrejsNoteCategory = new Category("Business");
@@ -21,7 +21,7 @@ public class JavaCode {
         //4,5,6 задания:
         System.out.println("\n\n4-6 Задания:");
 
-        Note myNote = new Note(Categories.Work);
+        oldNote myNote = new oldNote(Categories.Work);
 
         System.out.println("The category is: " + myNote.getCategory());
 

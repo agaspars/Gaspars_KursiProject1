@@ -1,14 +1,11 @@
 package com.app.controllers;
 
-import model.Note;
-import model.User;
-import model.enums.Categories;
+import com.app.model.oldNote;
+import com.app.model.User;
+import com.app.model.enums.Categories;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-
-import java.util.List;
 
 @Controller
 public class allNotes {
@@ -16,7 +13,7 @@ public class allNotes {
     @GetMapping("/allNotes")
     public String getAllNotes(Model model) {
 
-        Note myNote = new Note(Categories.Work);
+        oldNote myNote = new oldNote(Categories.Work);
 
         myNote.addNote(new User("Andrew", "G.", "a.g@gmail.com", "This is Andrew's first note"));
         myNote.addNote(new User("Andrew", "G.", "a.g@gmail.com", "This is Andrew's second note"));
