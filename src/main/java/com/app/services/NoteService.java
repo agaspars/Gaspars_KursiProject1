@@ -1,18 +1,12 @@
 package com.app.services;
 
 import com.app.model.Note;
+import com.app.model.User;
 import org.springframework.stereotype.Service;
 
 @Service
 public class NoteService {
 
-//    public Note validateNote(Note note) {
-//        if (note.getFirstName().isEmpty() || note.getLastName().isEmpty() ||
-//                note.getEmail().isEmpty() || note.getNote().isEmpty()) {
-//            return null;
-//        }
-//        return note;
-//    }
 
     public String validateNote(Note note) {
         String answer = "";

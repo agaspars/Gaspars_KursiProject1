@@ -6,5 +6,12 @@
 </head>
 <body>
     <div th:text="'There are some mistakes: ' + ${errorString}"></div>
+    <form th:action="@{/registrationNote}" th:object="${noteCreate}" method="POST">
+        <div><input type="text" placeholder="First Name" th:field="*{firstName}" th:attr="value = ${thisNote.firstName}"></div>
+        <div><input type="text" placeholder="Last Name" th:field="*{lastName}" th:value="${thisNote.lastName}"></div>
+        <div><input type="text" placeholder="Email" th:field="*{email}" th:value="${thisNote.email}"></div>
+        <div><input type="text" placeholder="Note" th:field="*{note}" th:value="${thisNote.note}"></div>
+        <div><input type="submit" value="Register!"></div>
+    </form>
 </body>
 </html>
