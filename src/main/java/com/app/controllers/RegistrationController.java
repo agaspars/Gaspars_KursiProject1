@@ -1,6 +1,5 @@
 package com.app.controllers;
 
-import com.app.model.Note;
 import com.app.model.User;
 import com.app.services.NoteService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,18 +17,18 @@ public class RegistrationController {
 
     @GetMapping("/registrationNote")
     public String getRegistrationPage(Model model) { // Model - для передачи данных
-        model.addAttribute("noteCreate", new Note());
+        model.addAttribute("noteCreate", new User());
         return "registrationNote";
     }
 
     @PostMapping("/registrationNote")    //Попадаем сюда после нажатия кнопки Register!
-    public String registerUser(@ModelAttribute Note note, Model model) {
-        String validatedNote = noteService.validateNote(note);
+    public String registerUser(@ModelAttribute User user, Model model) {
+        String validatedNote = noteService.validateNote(user);
         if (validatedNote.isEmpty()) {
-            model.addAttribute("Name", note.getFirstName());
+            model.addAttribute("Name", user.getFirstName());
             return "successRegistration";
         } else {
-            model.addAttribute("noteCreate", note);
+            model.addAttribute("noteCreate", user);
           //  model.addAttribute("thisNote", note);
             model.addAttribute("errorString", validatedNote);
             return "errorRegistration";

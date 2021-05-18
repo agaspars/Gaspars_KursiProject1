@@ -3,51 +3,37 @@ package com.app.model;
 import com.app.model.enums.Categories;
 
 public class Note {
-    private String firstName;
-    private String lastName;
-    private String email;
-    private String note;
+    private String text;
+    private Categories category;
+    private User author;
 
-    public Note(String firstName, String lastName, String email, String note) {
-        this.firstName = firstName;
-        this.lastName = lastName;
-        this.email = email;
-        this.note = note;
+    public Note(String text, Categories category, User author) {
+        this.text = text;
+        this.category = category;
+        this.author = author;
     }
 
-    public Note() {}
-
-    public String getFirstName() {
-        return firstName;
+    public String getText() {
+        return text;
     }
 
-    public void setFirstName(String firstName) {
-        this.firstName = firstName;
+    public void setText(String text) {
+        this.text = text;
     }
 
-    public String getLastName() {
-        return lastName;
+    public Categories getCategory() {
+        return category;
     }
 
-    public void setLastName(String lastName) {
-        this.lastName = lastName;
+    public void setCategory(Categories category) {
+        this.category = category;
     }
 
-    public String getEmail() {
-        return email;
+    public User getAuthor() {
+        return author;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setAuthor(User author) {
+        this.author = author;
     }
-
-    public String getNote() {
-        return note;
-    }
-
-    public void setNote(String note) {
-        this.note = note;
-    }
-
-
 }

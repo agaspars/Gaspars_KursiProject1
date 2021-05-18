@@ -1,6 +1,5 @@
 package com.app.services;
 
-import com.app.model.Note;
 import com.app.model.User;
 import org.springframework.stereotype.Service;
 
@@ -8,22 +7,16 @@ import org.springframework.stereotype.Service;
 public class NoteService {
 
 
-    public String validateNote(Note note) {
+    public String validateNote(User user) {
         String answer = "";
-        if (note.getFirstName().isEmpty()) {
+        if (user.getFirstName().isEmpty()) {
             answer += "First Name is empty; ";
         }
-        if (note.getLastName().isEmpty()) {
+        if (user.getLastName().isEmpty()) {
             answer += "Last Name is empty; ";
         }
-        if (note.getEmail().isEmpty()) {
+        if (user.getEmail().isEmpty()) {
             answer += "Email is empty; ";
-        }
-        if (note.getNote().isEmpty()) {
-            answer += "Note is empty; ";
-        }
-        if (note.getNote().length() >= 1000) {
-            answer += "Note is too long; ";
         }
         return answer;
     }

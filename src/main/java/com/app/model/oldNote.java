@@ -9,7 +9,7 @@ public class oldNote {
     private String title;
     private String text;
     private Categories category;
-    private List<User> allNotes = new ArrayList<>();
+    private List<oldUser> allNotes = new ArrayList<>();
 
     //Конструктор для 1-3 задания
     public oldNote(String title, String text) {
@@ -46,11 +46,11 @@ public class oldNote {
     }
 
 
-    public List<User> getAllNotes() {
+    public List<oldUser> getAllNotes() {
         return allNotes;
     }
 
-    public void setAllNotes(List<User> allNotes) {
+    public void setAllNotes(List<oldUser> allNotes) {
         this.allNotes = allNotes;
     }
 
@@ -59,18 +59,18 @@ public class oldNote {
         System.out.println("Note: " + text + "\n");
     }
 
-    public void addNote(User a) {
+    public void addNote(oldUser a) {
         allNotes.add(a);
     }
 
     public void printAllNotes() {
-        for(User a : allNotes) {
+        for(oldUser a : allNotes) {
             System.out.println(a.getNote());
         }
     }
 
     public void printUserNotes(String userName) {
-        for(User a: allNotes) {
+        for(oldUser a: allNotes) {
             System.out.println(a.getFirstName().equals(userName) ? a.getNote() : "The person is not right");
         }
     }
