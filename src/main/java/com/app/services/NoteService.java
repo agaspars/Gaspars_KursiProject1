@@ -11,19 +11,19 @@ public class NoteService {
     public String validateNote(Note note) {
         String answer = "";
         if (note.getFirstName().isEmpty()) {
-            answer += "First Name is empty, ";
+            answer += "First Name is empty; ";
         }
         if (note.getLastName().isEmpty()) {
-            answer += "Last Name is empty, ";
+            answer += "Last Name is empty; ";
         }
         if (note.getEmail().isEmpty()) {
-            answer += "Email is empty, ";
+            answer += "Email is empty; ";
         }
         if (note.getNote().isEmpty()) {
-            answer += "Note is empty, ";
+            answer += "Note is empty; ";
         }
         if (note.getNote().length() >= 1000) {
-            answer += "Note is too long";
+            answer += "Note is too long; ";
         }
         return answer;
     }

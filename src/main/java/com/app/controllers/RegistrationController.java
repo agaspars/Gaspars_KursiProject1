@@ -29,8 +29,8 @@ public class RegistrationController {
             model.addAttribute("Name", note.getFirstName());
             return "successRegistration";
         } else {
-            model.addAttribute("noteCreate", new Note());
-            model.addAttribute("thisNote", note);
+            model.addAttribute("noteCreate", note);
+          //  model.addAttribute("thisNote", note);
             model.addAttribute("errorString", validatedNote);
             return "errorRegistration";
         }
