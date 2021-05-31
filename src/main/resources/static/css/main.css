@@ -1,0 +1,13 @@
+.header {
+border-bottom: 1px solid #CCC;
+    width: 500px;
+    font-size: 25 px;
+    color: #667;
+    margin-bottom: 10px;
+}
+
+.table-row {
+}
+    .table-header {
+    font-weight: 600;
+    }

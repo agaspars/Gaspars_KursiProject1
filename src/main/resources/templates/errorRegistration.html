@@ -6,7 +6,7 @@
 </head>
 <body>
     <div th:text="'There are some mistakes: ' + ${errorString}"></div>
-    <form th:action="@{/registrationNote}" th:object="${noteCreate}" method="POST">
+    <form th:action="@{/registrationUser}" th:object="${userCreate}" method="POST">
         <div><input type="text" placeholder="First Name" th:field="*{firstName}"></div>
         <div><input type="text" placeholder="Last Name" th:field="*{lastName}"></div>
         <div><input type="text" placeholder="Email" th:field="*{email}"></div>

@@ -1,0 +1,21 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Note Create</title>
+</head>
+<body>
+<form th:action="@{/noteCreate}" th:object="${createdNote}" method="POST">
+    <div><input type="text" placeholder="Note" th:field="*{text}"></div>
+    <div>
+        <select th:field="*{category}">
+            <option value="WORK">Work</option>
+            <option value="STUDY">Study</option>
+            <option value="DAILY">Daily</option>
+            <option value="BUSINESS">Business</option>
+        </select>
+    </div>
+    <div><input type="submit" value="Create"></div>
+</form>
+</body>
+</html>

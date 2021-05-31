@@ -2,10 +2,10 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Note Registration</title>
+    <title>User Registration</title>
 </head>
 <body>
-<form th:action="@{/registrationNote}" th:object="${noteCreate}" method="POST">
+<form th:action="@{/registrationUser}" th:object="${userCreate}" method="POST">
     <div><input type="text" placeholder="First Name" th:field="*{firstName}"></div>
     <div><input type="text" placeholder="Last Name" th:field="*{lastName}"></div>
     <div><input type="text" placeholder="Email" th:field="*{email}"></div>

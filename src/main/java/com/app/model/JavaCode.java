@@ -21,7 +21,7 @@ public class JavaCode {
         //4,5,6 задания:
         System.out.println("\n\n4-6 Задания:");
 
-        oldNote myNote = new oldNote(Categories.Work);
+        oldNote myNote = new oldNote(Categories.WORK);
 
         System.out.println("The category is: " + myNote.getCategory());
 

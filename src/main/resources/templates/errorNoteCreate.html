@@ -1,0 +1,15 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Something went wrong!</title>
+</head>
+<body>
+<div th:text="'There are some mistakes: ' + ${errorMessage}"></div>
+<form th:action="@{/noteCreate}" th:object="${createdNote}" method="POST">
+    <div><input type="text" placeholder="Note" th:field="*{text}"></div>
+    <div><input type="text" placeholder="Category" th:field="*{category}"></div>
+    <div><input type="submit" value="Create"></div>
+</form>
+</body>
+</html>
