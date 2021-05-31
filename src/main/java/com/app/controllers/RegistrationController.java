@@ -17,7 +17,7 @@ public class RegistrationController {
     @GetMapping("/registrationUser")
     public String getRegistrationPage(Model model) { // Model - для передачи данных
         model.addAttribute("userCreate", new User());
-        return "registrationUser";
+        return "userDirectory/registrationUser";
     }
 
     @PostMapping("/registrationUser")    //Попадаем сюда после нажатия кнопки Register!
@@ -25,11 +25,11 @@ public class RegistrationController {
         String validatedUser = userService.validateUser(user);
         if (validatedUser.isEmpty()) {
             model.addAttribute("Name", user.getFirstName());
-            return "successRegistration";
+            return "userDirectory/successRegistration";
         } else {
             model.addAttribute("userCreate", user);
             model.addAttribute("errorString", validatedUser);
-            return "errorRegistration";
+            return "userDirectory/errorRegistration";
         }
     }
 }

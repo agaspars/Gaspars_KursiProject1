@@ -17,17 +17,18 @@ public class NoteController {
     @GetMapping("/noteCreate")
     public String noteCreatePage(Model model) {
         model.addAttribute("createdNote", new Note());
-        return "noteCreate";
+        return "noteDirectory/noteCreate";
     }
 
     @PostMapping("/noteCreate")    //Попадаем сюда после нажатия кнопки Register!
     public String noteCreate(@ModelAttribute Note note, Model model) {
         String validatedNote = noteService.validateNote(note);
         if (validatedNote.isEmpty()==true) {
-            return "successNoteCreate";
+            return "noteDirectory/successNoteCreate";
         } else {
+            model.addAttribute("createdNote", note);
             model.addAttribute("errorMessage", validatedNote);
-            return "errorNoteCreate";
+            return "noteDirectory/errorNoteCreate";
         }
     }
 }
