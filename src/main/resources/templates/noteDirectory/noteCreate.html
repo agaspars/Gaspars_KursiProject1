@@ -5,6 +5,26 @@
     <title>Note Create</title>
 </head>
 <body>
+
+<div style="display:flex">
+    <div>
+        <a href="/noteCreate">All Notes</a>
+    </div>
+    <div th:each="user : ${users}" style="margin-left: 10px;">
+        <a th:href="'/noteCreate/' + ${user.id}" th:text="${user.firstName} + ' ' + ${user.lastName}"></a>
+    </div>
+</div>
+
+<div>All Notes</div>
+<div th:each="note : ${notes}" style="display:flex">
+    <div th:text="${note.id} + '.  ' + ${note.text} + '  ' + '(' + ${note.author.firstName} + ' ' + ${note.author.lastName} + ')'"></div>
+</div>
+<br>
+<div>Create Note</div>
+<br>
+<div th:if="${error != null}">
+    <div th:text="${error}"></div>
+</div>
 <form th:action="@{/noteCreate}" th:object="${createdNote}" method="POST">
     <div><input type="text" placeholder="Note" th:field="*{text}"></div>
     <div>
@@ -13,6 +33,13 @@
             <option value="STUDY">Study</option>
             <option value="DAILY">Daily</option>
             <option value="BUSINESS">Business</option>
+        </select>
+    </div>
+    <div>
+        <select th:field="*{author.id}">
+            <th:block th:each="user : ${users}">
+                <option th:value="${user.id}" th:text="${user.firstName}"></option>
+            </th:block>
         </select>
     </div>
     <div><input type="submit" value="Create"></div>

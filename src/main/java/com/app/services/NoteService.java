@@ -6,11 +6,22 @@ import com.app.model.enums.Categories;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class NoteService {
 
     @Autowired
     private NoteDao noteDao;
+
+    public List<Note> getNotes() {
+        return noteDao.getNotes();
+    }
+
+    public List<Note> getNotes(long id) {
+        return noteDao.getNotes(id);
+    }
+
 
     public String validateNote(Note note) {
         String answer = "";
