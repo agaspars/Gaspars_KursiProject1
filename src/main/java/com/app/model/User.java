@@ -7,6 +7,8 @@ public class User {
     private String firstName;
     private String lastName;
     private String email;
+    private String password;
+    private String passwordCheck;
 
     public User(String firstName, String lastName, String email) {
         this.firstName = firstName;
@@ -49,5 +51,19 @@ public class User {
         this.email = email;
     }
 
+    public String getPassword() {
+        return password;
+    }
 
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getPasswordCheck() {
+        return passwordCheck;
+    }
+
+    public void setPasswordCheck(String passwordCheck) {
+        this.passwordCheck = passwordCheck;
+    }
 }

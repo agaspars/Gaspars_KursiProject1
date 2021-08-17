@@ -9,6 +9,8 @@
     <form th:action="@{/registrationUser}" th:object="${userCreate}" method="POST">
         <div><input type="text" placeholder="First Name" th:field="*{firstName}"></div>
         <div><input type="text" placeholder="Last Name" th:field="*{lastName}"></div>
+        <div><input type="password" placeholder="Password" th:field="*{password}"></div>
+        <div><input type="password" placeholder="Accept Password" th:field="*{passwordCheck}"></div>
         <div><input type="text" placeholder="Email" th:field="*{email}"></div>
         <div><input type="submit" value="Register!"></div>
     </form>

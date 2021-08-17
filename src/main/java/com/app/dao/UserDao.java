@@ -15,6 +15,11 @@ public class UserDao {
     @Autowired
     private JdbcTemplate jdbcTemplate;
 
+    public List<User> getUserByEmail(String email) {
+        RowMapper<User> rowMapper = (rs, rowNumber) -> mapUser(rs);
+        return jdbcTemplate.query("SELECT * FROM users WHERE email = ?", rowMapper, email);
+    }
+
     //1st method:
     public List<User> getUsers() {
         RowMapper<User> rowMapper = (rs, rowNumber) -> mapUser(rs);
@@ -28,12 +33,13 @@ public class UserDao {
         user.setFirstName(rs.getString("first_name"));
         user.setLastName(rs.getString("last_name"));
         user.setEmail(rs.getString("email"));
+        user.setPassword(rs.getString("password"));
 
         return user;
     }
 
     public void storeUser (User user) {
-        jdbcTemplate.update("INSERT INTO users (first_name, last_name, email, password) VALUES (?, ?, ?, '123')",
-                user.getFirstName(), user.getLastName(), user.getEmail());
+        jdbcTemplate.update("INSERT INTO users (first_name, last_name, email, password) VALUES (?, ?, ?, ?)",
+                user.getFirstName(), user.getLastName(), user.getEmail(), user.getPassword());
     }
 }
